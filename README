@@ -7,3 +7,49 @@
 ddfgddfddfgddf
 
 [ddfgddf](https://github.com/william-ling/blog/issues?q=is%3Aissue+is%3Aopen+label%3A"linux+manjaro")
+## 2  linux manjaro系统下proxychains ng的安装及使用
+
+1）安装：直接到软件管理就可以找到安装。
+
+2）使用vim打开/etc/proxychains.conf，修改配置参数，注释掉socks4g行，然后添加：
+
+​                  sock5 127.0.0.1 1088
+
+​                  http 127.0.0.1 8888
+
+上面的ip地址和端口号要与通过v2ray设置的sock5和http一样。
+
+3）在终端输入：proxychains 应用程序名字，比如
+
+​      proxychains firefox
+
+​     那么就对firefox启用了proxychains 代理。
+
+​     有时候必须加上应用的绝对路径，才行，比如：
+
+​     proxychains /opt/pyTranscriber/pyTranscriber
+
+​     那么就对pyTranscriber这个应用程序启用了proxychains 代理。
+## 2  linux manjaro系统下proxychains ng的安装及使用
+
+1）安装：直接到软件管理就可以找到安装。
+
+2）使用vim打开/etc/proxychains.conf，修改配置参数，注释掉socks4g行，然后添加：
+
+​                  sock5 127.0.0.1 1088
+
+​                  http 127.0.0.1 8888
+
+上面的ip地址和端口号要与通过v2ray设置的sock5和http一样。
+
+3）在终端输入：proxychains 应用程序名字，比如
+
+​      proxychains firefox
+
+​     那么就对firefox启用了proxychains 代理。
+
+​     有时候必须加上应用的绝对路径，才行，比如：
+
+​     proxychains /opt/pyTranscriber/pyTranscriber
+
+​     那么就对pyTranscriber这个应用程序启用了proxychains 代理。
