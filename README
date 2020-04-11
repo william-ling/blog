@@ -1,100 +1,25 @@
-## 2  linux manjaro系统下proxychains ng的安装及使用
-
-1）安装：直接到软件管理就可以找到安装。
-
-2）使用vim打开/etc/proxychains.conf，修改配置参数，注释掉socks4g行，然后添加：
-
-​                  sock5 127.0.0.1 1088
-
-​                  http 127.0.0.1 8888
-
-上面的ip地址和端口号要与通过v2ray设置的sock5和http一样。
-
-3）在终端输入：proxychains 应用程序名字，比如
-
-​      proxychains firefox
-
-​     那么就对firefox启用了proxychains 代理。
-
-​     有时候必须加上应用的绝对路径，才行，比如：
-
-​     proxychains /opt/pyTranscriber/pyTranscriber
-
-​     那么就对pyTranscriber这个应用程序启用了proxychains 代理。
-
-[linux manjaro](https://github.com/william-ling/blog/issues?q=is%3Aissue+is%3Aopen+label%3A%22linux+manjaro%22)
 
 
+------
 
-ddfgddfddfgddf
+# 2020年4月10日
 
-[ddfgddf](https://github.com/william-ling/blog/issues?q=is%3Aissue+is%3Aopen+label%3A"linux+manjaro")
-## 2  linux manjaro系统下proxychains ng的安装及使用
+## 1 linux下find命令
 
-1）安装：直接到软件管理就可以找到安装。
+如果找不到某个文件，可以使用find命令来定位它。
 
-2）使用vim打开/etc/proxychains.conf，修改配置参数，注释掉socks4g行，然后添加：
+可以输入下列符号来找到一个文件：
+find 绝对路径 -name 文件名
 
-​                  sock5 127.0.0.1 1088
+例如，你可以输入下列命令来找到Firefox：
+find / -name firefox
 
-​                  http 127.0.0.1 8888
+命令运行的结果会嗖的一下输出一大堆，别担心，你也可以通过less或者more来进行分页查看。
+find / -name firefox | more
+find / -name firefox | less
 
-上面的ip地址和端口号要与通过v2ray设置的sock5和http一样。
+当find命令查找到没有权限访问的文件夹时，会报出一条拒绝访问错误，你可以通过sudo命令来提示权限。当然，如果你没有安装sudo的话，就只能切换到一个拥有权限的用户了。
+sudo find / -name firefox | more
 
-3）在终端输入：proxychains 应用程序名字，比如
-
-​      proxychains firefox
-
-​     那么就对firefox启用了proxychains 代理。
-
-​     有时候必须加上应用的绝对路径，才行，比如：
-
-​     proxychains /opt/pyTranscriber/pyTranscriber
-
-​     那么就对pyTranscriber这个应用程序启用了proxychains 代理。
-## 2  linux manjaro系统下proxychains ng的安装及使用
-
-1）安装：直接到软件管理就可以找到安装。
-
-2）使用vim打开/etc/proxychains.conf，修改配置参数，注释掉socks4g行，然后添加：
-
-​                  sock5 127.0.0.1 1088
-
-​                  http 127.0.0.1 8888
-
-上面的ip地址和端口号要与通过v2ray设置的sock5和http一样。
-
-3）在终端输入：proxychains 应用程序名字，比如
-
-​      proxychains firefox
-
-​     那么就对firefox启用了proxychains 代理。
-
-​     有时候必须加上应用的绝对路径，才行，比如：
-
-​     proxychains /opt/pyTranscriber/pyTranscriber
-
-​     那么就对pyTranscriber这个应用程序启用了proxychains 代理。
-## 2  linux manjaro系统下proxychains ng的安装及使用
-
-1）安装：直接到软件管理就可以找到安装。
-
-2）使用vim打开/etc/proxychains.conf，修改配置参数，注释掉socks4g行，然后添加：
-
-​                  sock5 127.0.0.1 1088
-
-​                  http 127.0.0.1 8888
-
-上面的ip地址和端口号要与通过v2ray设置的sock5和http一样。
-
-3）在终端输入：proxychains 应用程序名字，比如
-
-​      proxychains firefox
-
-​     那么就对firefox启用了proxychains 代理。
-
-​     有时候必须加上应用的绝对路径，才行，比如：
-
-​     proxychains /opt/pyTranscriber/pyTranscriber
-
-​     那么就对pyTranscriber这个应用程序启用了proxychains 代理。
+如果你知道你要查找的文件在你的当前目录结构中，那么你可以使用点来代替斜杠：
+sudo find . -name firefox | more
